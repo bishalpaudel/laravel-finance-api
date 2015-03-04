@@ -32,10 +32,38 @@ class AssetQuotes {
         return true;
     }
 
+    /**
+     * get information about a given set of stock quotes
+     * @param  string $symbols single or multiple symbols seperate by commas
+     * @return array
+     */
     public function getInfo($symbols = '')
     {
-        $quotesVendor = $this->quotesVendorFactory();
-        $quotesVendor->getAssetQuote($symbols);
+        // convert symbols into array format
+        $symbols = $this->validateSymbols($symbols);
+        // get the vendor object defined in $this->apiConfig to pass into QuotesVendor
+        $vendor = $this->quotesVendorFactory();
+        $quotes = new QuotesVendor($vendor);
+        $quotes->getQuote($symbols);
+    }
+
+    /**
+     * symbols can be in the form of a single symbol,
+     * or multiple symbols can be seperated by URL encode commas
+     * All symbols must be alphanumeric
+     * @param  string $symbols
+     * @return array
+     */
+    private function validateSymbols($symbols = '')
+    {
+        $symbols = explode(',', urldecode($symbols));
+
+        for ($i = 0; $i < count($symbols); $i++) {
+            if (! ctype_alnum($symbols[$i]))
+                throw new \Exception('Invalid ticker symbol format');
+        }
+
+        return $symbols;
     }
 
     /**

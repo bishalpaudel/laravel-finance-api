@@ -1,9 +1,9 @@
 <?php namespace Libraries\FinanceApis;
 
-class QuotesQuandl {
+class QuotesQuandl implements Quotes {
 
-    public function getAssetQuote($symbols)
+    public function getQuote($symbols)
     {
-        var_dump('quandl ' . $symbols);
+        var_dump($symbols);
     }
 }

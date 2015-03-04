@@ -1,9 +1,9 @@
 <?php namespace Libraries\FinanceApis;
 
-class QuotesYahoo {
+class QuotesYahoo implements Quotes {
 
-    public function getAssetQuote($symbols)
+    public function getQuote($symbols)
     {
-        var_dump('yahoo ' . $symbols);
+        var_dump($symbols);
     }
 }
