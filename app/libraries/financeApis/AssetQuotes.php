@@ -34,8 +34,20 @@ class AssetQuotes {
 
     public function getInfo($symbols = '')
     {
+        $quotesVendor = $this->quotesVendorFactory();
+        $quotesVendor->getAssetQuote($symbols);
+    }
 
-        var_dump($this->vendor);
+    /**
+     * instantiate the vendor object to retrieve quotes
+     * @return object $quotesVendor
+     */
+    private function quotesVendorFactory()
+    {
+        if (class_exists($this->vendor))
+            return new $this->vendor();
+        else
+            throw new \Exception('Invalid quotesVendor defined in config file');
     }
 
     /**
@@ -50,6 +62,7 @@ class AssetQuotes {
 
         if (in_array($default, array_keys($this->apiConfig['quotesVendors']))) {
             $this->vendor = $this->apiConfig['quotesVendors'][$default];
+
         } else {
             throw new \Exception('Invalid defaultQuotesVendor defined in config file');
         }
