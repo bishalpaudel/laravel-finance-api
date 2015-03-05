@@ -44,8 +44,7 @@ class AssetQuotes {
         // get the vendor object defined in $this->apiConfig to pass into QuotesVendor
         $vendor = $this->quotesVendorFactory();
         $quotes = new QuotesVendor($vendor);
-        $data = $quotes->getQuote($symbols);
-        // var_dump($data);
+        return $quotes->getQuote($symbols);
     }
 
     /**

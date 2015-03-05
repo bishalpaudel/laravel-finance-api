@@ -34,6 +34,6 @@ class AssetInfo extends \BaseController {
             return array('status' => 400, 'message' => 'invalid vendor');            
         }
 
-        $quotes->getInfo($symbols);
+        return $quotes->getInfo($symbols);
     }
 }
