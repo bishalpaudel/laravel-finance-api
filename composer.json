@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "EtanNitram\\FinanceApis": "src/"
+            "EtanNitram\\FinanceApis\\": "src/"
         }
     }
 }
