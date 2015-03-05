@@ -1,0 +1,23 @@
+{
+    "name": "etannitram/laravel-finance-apis",
+    "description": "REST API for retrieving data from various finance vendor APIs",
+    "keywords": ["laravel", "finance api", "yahoo finance api", "markit finance api"],
+    "authors": [
+        {
+            "name": "Nate Martin",
+            "email": "etan.nitram@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~4|~5"
+    },
+    "require-dev" : {
+        "phpunit/phpunit" : "~4.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "EtanNitram\\FinanceApis": "src/"
+        }
+    }
+}
