@@ -2,6 +2,7 @@
     "name": "etannitram/laravel-finance-apis",
     "description": "REST API for retrieving data from various finance vendor APIs",
     "keywords": ["laravel", "finance api", "yahoo finance api", "markit finance api"],
+    "license" : "MIT",
     "authors": [
         {
             "name": "Nate Martin",
