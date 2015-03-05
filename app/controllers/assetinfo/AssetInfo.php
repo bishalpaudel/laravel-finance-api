@@ -26,7 +26,7 @@ class AssetInfo extends \BaseController {
 
         $quotes = new AssetQuotes();
 
-        // optional ability to set an API thirdparty vendor, like YAHOO, Quandl, ect
+        // optional ability to set an API thirdparty vendor, like YAHOO, Markit, ect
         $vendor = Input::get('vendor');
 
         // set the vendor if an over ride was given

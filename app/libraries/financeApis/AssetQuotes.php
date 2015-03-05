@@ -22,7 +22,7 @@ class AssetQuotes {
      */
     public function setVendor($vendor = '')
     {
-
+        $vendor = strtolower($vendor);
         if (in_array($vendor, array_keys($this->apiConfig['quotesVendors']))) {
             $this->vendor = $this->apiConfig['quotesVendors'][$vendor];
         } else {
@@ -44,7 +44,8 @@ class AssetQuotes {
         // get the vendor object defined in $this->apiConfig to pass into QuotesVendor
         $vendor = $this->quotesVendorFactory();
         $quotes = new QuotesVendor($vendor);
-        $quotes->getQuote($symbols);
+        $data = $quotes->getQuote($symbols);
+        var_dump($data);
     }
 
     /**
