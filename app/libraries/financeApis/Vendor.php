@@ -35,12 +35,18 @@ class Vendor {
     private function parsePostData($data)
     {
         $d = '';
-        for ($i = 0; $i < count($data); $i++) {
-                    
-            foreach ($data[$i] as $key => $value) {
-                $d .= $key . '=' . $value . '&';
+        foreach ($data as $k => $v) {
+            
+            if (is_string($k)) {
+                $d .= $k . '=' . $v . '&';
+            } else {
+                foreach ($data[$k] as $key => $value) {
+                    $d .= $key . '=' . $value . '&';
+                }                
             }
+
         }
+
         return trim($d, '&');
     }
 }

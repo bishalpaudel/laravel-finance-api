@@ -45,7 +45,7 @@ class AssetQuotes {
         $vendor = $this->quotesVendorFactory();
         $quotes = new QuotesVendor($vendor);
         $data = $quotes->getQuote($symbols);
-        var_dump($data);
+        // var_dump($data);
     }
 
     /**
