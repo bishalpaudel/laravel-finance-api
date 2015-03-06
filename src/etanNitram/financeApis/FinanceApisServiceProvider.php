@@ -18,7 +18,7 @@ class FinanceApisServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('etannitram\financeapis');
+        $this->package('etannitram/financeapis');
     }
 
     /**
