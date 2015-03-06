@@ -9,9 +9,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
      */
     public function createApplication()
     {
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $unitTesting = true;
 
-        return $app;
+        $testEnvironment = 'testing';
+
+        return require __DIR__.'/../../bootstrap/start.php';
     }
 
 }
