@@ -1,4 +1,4 @@
-<?php namespace EtanNitram\FinanceApis;
+<?php namespace EtanNitram\FinanceApis\FinanceQuotes;
 
 use Illuminate\Support\Facades\Config;
 
