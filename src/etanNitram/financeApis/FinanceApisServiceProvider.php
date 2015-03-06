@@ -28,7 +28,8 @@ class FinanceApisServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
+        $controller = __DIR__ . '../../../controllers/FinanceQuotes';        
+        $this->app->register($controller);
     }
 
     /**

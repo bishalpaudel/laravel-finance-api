@@ -20,5 +20,6 @@
         "psr-4": {
             "EtanNitram\\FinanceApis\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
