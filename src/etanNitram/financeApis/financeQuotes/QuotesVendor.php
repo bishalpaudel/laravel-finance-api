@@ -1,5 +1,7 @@
 <?php namespace EtanNitram\FinanceApis\FinanceQuotes;
 
+use EtanNitram\FinanceApis\FinanceQuotes\Vendors\Quotes;
+
 class QuotesVendor {
 
     private $vendor;
