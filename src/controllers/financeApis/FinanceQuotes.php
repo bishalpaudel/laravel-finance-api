@@ -1,10 +1,11 @@
-<?php namespace Controllers\FinanceApis;
+<?php namespace EtanNitram\FinanceApis;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Controller;
 use Illuminate\Support\Facades\Input;
 use EtanNitram\FinanceApis\AssetQuotes;
 
-class FinanceQuotes extends \BaseController {
+class FinanceQuotes extends \Controller {
 
     private $apiConfig;
 
