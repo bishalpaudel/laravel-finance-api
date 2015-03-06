@@ -1,8 +1,11 @@
 <?php namespace EtanNitram\FinanceApis;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Config;
 
 class FinanceApisServiceProvider extends ServiceProvider {
+
+    private $packageName = 'etanNitram/financeApis';
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -18,7 +21,7 @@ class FinanceApisServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('etannitram/financeapis');
+        $this->package($this->packageName);
     }
 
     /**
@@ -28,8 +31,8 @@ class FinanceApisServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $controller = __DIR__ . '../../../controllers/FinanceQuotes';        
-        $this->app->register($controller);
+        $configPath = __DIR__ . '../../config/financeApi.php';
+        $this->app['config']->package($this->packageName, $configPath);
     }
 
     /**

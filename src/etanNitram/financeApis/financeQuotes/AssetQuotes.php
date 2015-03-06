@@ -4,13 +4,16 @@ use Illuminate\Support\Facades\Config;
 
 class AssetQuotes {
 
+    /**
+     * vendor class defined in config
+     * @var string
+     */
     private $vendor = '';
+    
     private $apiConfig = array();
 
     public function __construct() {
-
-        $this->apiConfig = Config::get('financeApi');
-
+        $this->apiConfig = Config::get('financeApis::financeApi');
         $this->setDefaultVendor();
     }
 

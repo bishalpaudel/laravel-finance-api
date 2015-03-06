@@ -11,7 +11,7 @@ return array(
      * set the names of the vendors this application has access to
      */
     'quotesVendors' => array(
-        'yahoo' => 'Libraries\FinanceApis\Vendors\QuotesYahoo',
-        'markit' => 'Libraries\FinanceApis\Vendors\QuotesMarkit',
+        'yahoo' => 'EtanNitram\FinanceApis\FinanceQuotes\Vendors\QuotesYahoo',
+        'markit' => 'EtanNitram\FinanceApis\FinanceQuotes\Vendors\QuotesMarkit',
     ),
 );
