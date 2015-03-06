@@ -1,7 +1,6 @@
 <?php namespace EtanNitram\FinanceApis;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Config;
 
 class FinanceApisServiceProvider extends ServiceProvider {
 
