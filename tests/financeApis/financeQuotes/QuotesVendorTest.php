@@ -18,5 +18,4 @@ class QuotesVendorTest extends TestCase {
         // confirm the $data is of length 2 and first quote is for AAPL
 		$this->assertTrue(count($data) === 2 && isset($data[0]['symbol']) && $data[0]['symbol'] === 'AAPL');
 	}
-
 }
