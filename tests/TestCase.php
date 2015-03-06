@@ -1,17 +1,17 @@
 <?php
 
-class TestCase extends Orchestra\Testbench\TestCase {
+class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
     /**
-     * Get package providers.
+     * Creates the application.
      *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return array
+     * @return \Illuminate\Foundation\Application
      */
-    protected function getPackageProviders($app)
+    public function createApplication()
     {
-        return array(
-            'EtanNitram\FinanceApis\FinanceApisServiceProvider',
-        );
+        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+
+        return $app;
     }
+
 }
