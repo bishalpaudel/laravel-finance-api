@@ -17,8 +17,11 @@
         "phpunit/phpunit" : "~4.0"
     },
     "autoload": {
-        "psr-4": {
-            "EtanNitram\\FinanceApis\\": "src/"
+        "classmap": [
+            "src/"
+        ],
+        "psr-0": {
+            "EtanNitram\\FinanceApis": "src/"
         }
     },
     "minimum-stability": "dev"
