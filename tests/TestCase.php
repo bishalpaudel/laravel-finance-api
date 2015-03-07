@@ -1,19 +1,26 @@
 <?php
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase {
+class TestCase extends Orchestra\Testbench\TestCase {
 
     /**
-     * Creates the application.
+     * Define environment setup.
      *
-     * @return \Illuminate\Foundation\Application
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
      */
-    public function createApplication()
+    protected function getEnvironmentSetUp($app)
     {
-        $unitTesting = true;
+        $config = include(__DIR__ . '/../src/config/financeApi.php');
 
-        $testEnvironment = 'testing';
-
-        return require __DIR__.'/../../bootstrap/start.php';
+        $app['config']->set('financeApi', $config);
+        $app['config']->set('financeApis::financeApi', $config);
     }
 
+    /**
+     * Create a default test for this class
+     */
+    public function testHere()
+    {
+        $this->assertTrue(true);
+    }
 }
