@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Config;
-use EtanNitram\FinanceApis\QuotesVendor;
+use EtanNitram\FinanceApis\FinanceQuotes\QuotesVendor;
 
 class QuotesVendorTest extends TestCase {
 
