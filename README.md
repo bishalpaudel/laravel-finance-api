@@ -5,9 +5,9 @@ Make requests from your App to finace API's like Yahoo and Markit
 [![Build Status](https://travis-ci.org/etan-nitram/laravel-finance-api.svg?branch=master)](https://travis-ci.org/etan-nitram/laravel-finance-api)
 
 **Important**
-- This package is intended for use with free Finance REST APIs, and it is up to you to abide by the data Vendors' Terms of Service Agreements.
-- This package is pre-configured to access [Yahoo's YQL Console](https://developer.yahoo.com/yql/console/) and [Markit On Demand Quote Api](http://dev.markitondemand.com/)
-- This package does not offer oAuth authentication for APIs that require Auth
+- This package is intended for use with free Finance REST APIs, and it is up to you to abide by the Data Vendors' Terms of Service Agreements.
+- This package is pre-configured to access the Data Vendors, [Yahoo's YQL Console](https://developer.yahoo.com/yql/console/) and [Markit On Demand Quote Api](http://dev.markitondemand.com/)
+- This package does not offer oAuth authentication (or other Auth methods) for APIs that require Authentication
 
 ### Composer
 
