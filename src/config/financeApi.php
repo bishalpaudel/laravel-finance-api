@@ -5,7 +5,7 @@ return array(
     /**
      * The default vendor if no vendor is set elsewhere in the application
      */
-    'defaultQuotesVendor' => 'markit',
+    'defaultQuotesVendor' => 'yahoo',
 
     /**
      * set the names of the vendors this application has access to
