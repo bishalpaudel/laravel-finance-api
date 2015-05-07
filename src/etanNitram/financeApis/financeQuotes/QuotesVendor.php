@@ -35,6 +35,9 @@ class QuotesVendor {
          */
         $data = $this->vendor->getQuoteData($data);
 
+        if (!isset($data[0]))
+            $data = array($data);
+
         // now we can get our quote data from each set of quotes
         $quote = array();
 
