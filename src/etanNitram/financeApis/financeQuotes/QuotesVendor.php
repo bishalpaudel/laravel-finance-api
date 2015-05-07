@@ -35,6 +35,10 @@ class QuotesVendor {
          */
         $data = $this->vendor->getQuoteData($data);
 
+        // if the request did not return data
+        if (!is_array($data))
+            return array();
+
         if (!isset($data[0]))
             $data = array($data);
 
