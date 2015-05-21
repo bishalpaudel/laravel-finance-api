@@ -43,14 +43,43 @@ class QuotesYahoo extends Vendor implements Quotes {
      * @param  string $symbols
      * @return string $params
      */
-    private function createEndpointParams($symbols) {
-
+    private function createEndpointParams($symbols,$dates = [])
+    {
         $params = array(
-            'q'         => 'select * from yahoo.finance.quotes where symbol in (' . $symbols . ')',
             'format'    => $this->responseType,
             'env'       => 'store://datatables.org/alltableswithkeys',
             'callback'  => '',
         );
+
+        if( !empty($dates))
+        {
+            $first_element_of_array = current($dates);
+            $date_keys = array_keys($dates);
+            $last_index_of_dates = end($date_keys);
+
+            if(is_array($first_element_of_array))
+            {
+                $dateQuery = '';
+                $total_dates = count($dates);
+                foreach($dates as $index=>$date)
+                {
+                    $dateQuery .= '(startDate="' . $date['start'] . '" and endDate="' . $date['end'] . '")';
+                    if($index != $last_index_of_dates)
+                    {
+                        $dateQuery .= ' OR ';
+                    }
+                }
+            }
+            else
+            {
+                $dateQuery .= '(startDate="' . $dates[0] . '" and endDate="' . $dates[1] . '")';
+            }
+            $params['q'] = 'select * from yahoo.finance.historicaldata where symbol in (' . $symbols . ') AND (' . $dateQuery . ')';
+        }
+        else
+        {
+            $params['q'] = 'select * from yahoo.finance.quotes where symbol in (' . $symbols . ')';
+        }
 
         $p = '';
         foreach ($params as $key => $value) {
